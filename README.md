@@ -57,7 +57,7 @@ pip install -r requirements.txt
 
 ### 3. Run the Notebook (Data Preparation)
 
-1. If `track_data_final.csv` doesnt exist in the `data/` folder, download it from [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025) and save it in the `data/` folder before running the notebook.
+1. If `track_data_final.csv` doesnt exist in the `data/` folder, download it from [Spotify Global Music Dataset (2009–2025)](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025?select=track_data_final.csv) and save it in the `data/` folder before running the notebook.
 2. Open the Jupyter notebook: `Final Project Notebook.ipynb`
 3. **Important:** Select the venv kernel from the notebook's kernel selector (top-right corner). This should be the virtual environment you created in step 1. After selecting the venv, please restart VS Code before running the cells.
 4. Activate the venv again using `venv\Scripts\activate` for Windows and `source venv/bin/activate` for macOS/Linux.
