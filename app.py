@@ -174,6 +174,13 @@ genre_freq = data["genre_freq"]
 explicit_summary = data["explicit_summary"]
 pop_over_time = data["popularity_over_time"]
 
+if not sample_rows:
+    st.warning(
+        "No tracks match the selected filters. "
+        "Try expanding the release year range or choosing a different album type."
+    )
+    st.stop()
+
 
 # -----------------------------
 # Overview metrics
