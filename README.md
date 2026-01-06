@@ -57,7 +57,7 @@ pip install -r requirements.txt
 
 ### 3. Run the Notebook (Data Preparation)
 
-1. If `track_data_final.csv` doesnt exist in the `data/` folder, download it from [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025) and save it as `track_data_final.csv` in the `data/` folder before running the notebook.
+1. If `track_data_final.csv` doesnt exist in the `data/` folder, download it from [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025) and save it in the `data/` folder before running the notebook.
 2. Open the Jupyter notebook: `Final Project Notebook.ipynb`
 3. **Important:** Select the kernel version to match your Python installation. If you're using Python 3.13.7, select that kernel version from the notebook's kernel selector (top-right corner)
 4. Run all cells in the notebook
