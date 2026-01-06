@@ -1,6 +1,6 @@
 [theme]
 base = "dark"
-primaryColor = "#1DB954"        # Spotify green
+primaryColor = "#1DB954"
 backgroundColor = "#121212"
 secondaryBackgroundColor = "#0E0E0E"
 textColor = "#FFFFFF"
