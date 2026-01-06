@@ -25,7 +25,29 @@ The results are presented through an interactive Streamlit dashboard that mirror
 
 ## How to Run
 
-### 1. Install Requirements
+### 1. Create a Virtual Environment
+
+First, create and activate a virtual environment to isolate your project dependencies:
+
+```bash
+python -m venv venv
+```
+
+Then activate it:
+
+**On Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+**On macOS/Linux:**
+
+```bash
+source venv/bin/activate
+```
+
+### 2. Install Requirements
 
 Make sure you have Python 3.13 or newer installed, then install all required dependencies:
 
@@ -33,10 +55,12 @@ Make sure you have Python 3.13 or newer installed, then install all required dep
 pip install -r requirements.txt
 ```
 
-### 2. Run the Notebook (Data Preparation)
+### 3. Run the Notebook (Data Preparation)
 
 1. Download `track_data_final.csv` from Kaggle and place it inside the `data/` folder
-2. Open and run the Jupyter notebook: `Final Project Notebook.ipynb`
+2. Open the Jupyter notebook: `Final Project Notebook.ipynb`
+3. **Important:** Select the kernel version to match your Python installation. If you're using Python 3.13.7, select that kernel version from the notebook's kernel selector (top-right corner)
+4. Run all cells in the notebook
 
 This notebook:
 
@@ -46,7 +70,7 @@ This notebook:
 
 > **Important:** This step must be completed before running the Streamlit app.
 
-### 3. Run the Dashboard
+### 4. Run the Dashboard
 
 After the database has been created, start the Streamlit application:
 
