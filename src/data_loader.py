@@ -1,7 +1,5 @@
 import sqlite3
 from typing import Any, Dict, List, Optional, Sequence, Tuple
-import pandas as pd
-import numpy as np
 
 DB_PATH = "data/spotify_database.db"
 

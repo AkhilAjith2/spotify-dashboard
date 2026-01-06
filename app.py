@@ -1,3 +1,5 @@
+#### Kaggle link: https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025?select=track_data_final.csv
+
 import streamlit as st
 
 from src.data_loader import (
