@@ -242,6 +242,7 @@ with tab_eda:
         .reset_index()
     )
 
+    # Log-transform followers to handle wide range and normalize all features
     artist_agg["followers_log"] = np.log10(artist_agg["avg_artist_followers"] + 1)
 
     features = ["avg_artist_popularity", "followers_log", "track_count"]
@@ -254,7 +255,7 @@ with tab_eda:
         else:
             artist_agg[col + "_norm"] = 0.5
 
-
+    # Weighted index: 50% artist popularity, 30% followers, 20% track count
     artist_agg["artist_popularity_index"] = (
         0.5 * artist_agg["avg_artist_popularity_norm"]
         + 0.3 * artist_agg["followers_log_norm"]
@@ -475,11 +476,13 @@ with tab_rules:
 
     df_eval = pd.DataFrame(sample_rows)
 
+    # Define a hit as top 30% by popularity; predict hits based on artist metrics
     HIT_PERCENTILE = 0.70
     hit_cutoff = df_eval["track_popularity"].quantile(HIT_PERCENTILE)
 
     df_eval["true_hit"] = (df_eval["track_popularity"] >= hit_cutoff).astype(int)
 
+    # Rule: artists with popularity >= 75 and followers >= 1M are likely to produce hits
     df_eval["predicted_hit"] = (
         (df_eval["artist_popularity"] >= 75) &
         (df_eval["artist_followers"] >= 1_000_000)
@@ -530,6 +533,7 @@ with tab_rules:
 
     POPULARITY_THRESHOLD = sim_df["track_popularity"].quantile(0.99)
 
+    # Select reference track from top 1% most popular tracks with artist popularity >= 80
     very_popular_tracks = sim_df[
         (sim_df["track_popularity"] >= POPULARITY_THRESHOLD) &
         (sim_df["artist_popularity"] >= 80)

@@ -262,11 +262,13 @@ and track duration. All features are normalized to ensure balanced similarity.
 """
 
 RULES_SIMILARITY_INTERPRETATION = """
-When examining the ranked similarity results, the reference track Golden by HUNTR/X appears at the top with a similarity score of zero, as expected. The closest matches are primarily songs by the same artist or by artists with a very similar level of overall popularity and audience size. These tracks share comparable artist popularity scores, follower counts, and track durations, which places them close to the reference track in normalized feature space.
+When examining the ranked similarity results, the reference track Golden by HUNTR/X appears at the top with a similarity score of zero, as expected. The closest matches are dominated by songs from the same artist or from artists with very similar audience scale and market position. These tracks cluster closely in normalized feature space because they share comparable artist popularity, follower counts, and track duration.
 
-As the similarity score increases, there is a gradual shift toward tracks by different but still similarly positioned artists, such as sombr and Alex Warren. While artist popularity and follower count decrease smoothly across the ranking, track popularity itself does not follow a clear or monotonic pattern. This highlights that individual song success varies substantially even among artists with similar overall reach.
+As the similarity score increases, the results gradually shift toward tracks by different but still similarly positioned artists such as sombr and Alex Warren. None of the variables decrease smoothly across the ranking. Instead, artist popularity and follower count show an overall downward trend with noticeable fluctuations, reflecting meaningful differences even among similarly sized artists.
 
-Overall, this behavior suggests that after logarithmic transformation and normalization, the similarity measure is driven mainly by stable artist-level characteristics and basic track attributes such as duration, rather than by short-term fluctuations in track popularity. As a result, the similarity score provides an interpretable way to compare tracks based on structural similarity, while also illustrating the inherent unpredictability of track-level performance.
+Track popularity also declines in an overall sense, but it is far more volatile, exhibiting large jumps and drops between neighboring ranks. This indicates that while less similar tracks tend to be less popular on average, individual song performance varies dramatically, even among artists with comparable reach.
+
+Overall, this pattern suggests that after logarithmic transformation and normalization, the similarity metric is driven primarily by stable artist-level characteristics and basic track attributes such as duration, while track-level popularity contributes noisier, less predictable variation.
 """
 
 TOP_ARTISTS_TITLE = """

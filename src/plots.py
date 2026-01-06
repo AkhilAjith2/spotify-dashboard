@@ -50,7 +50,7 @@ def fig_hist_popularity(rows):
     return _base_layout(fig)
 
 def fig_corr_heatmap(corr_df):
-
+    # Displays correlation matrix with custom Spotify color gradient
     spotify_colorscale = [
         [0.0, "#000000"],
         [0.25, "#151d24"],
@@ -125,7 +125,7 @@ def fig_box_explicit(rows):
 
 
 def fig_bar_top_avg_genres(rows):
-
+    # Ranks genres by average track popularity using color intensity
     df = pd.DataFrame(rows)
     df = df.sort_values("avg_popularity", ascending=True)
 
@@ -143,7 +143,7 @@ def fig_bar_top_avg_genres(rows):
     return _base_layout(fig)
 
 def fig_bar_genre_frequency(rows):
-
+    # Identifies most common genres in filtered dataset
     df = pd.DataFrame(rows)
     df = df.sort_values("num_tracks", ascending=True)
 
@@ -210,7 +210,7 @@ def fig_box_album_type(rows):
 
 
 def fig_top_artists_index(df):
-
+    # Visualizes normalized artist popularity index using rank-based coloring
     df = df.sort_values("artist_popularity_index", ascending=True)
     df["rank_color"] = range(len(df))
 

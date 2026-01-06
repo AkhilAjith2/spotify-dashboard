@@ -9,6 +9,7 @@ def safe_float(x, default=0.0) -> float:
         return default
 
 def compute_correlation_matrix(rows):
+    # Computes correlation matrix for key popularity and track features
     """
     rows: List[dict] from SQL
     returns: Pandas DataFrame correlation matrix

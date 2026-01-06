@@ -54,7 +54,7 @@ def build_where_clause(
     pop_max: int,
     explicit_choice: str,
 ) -> Tuple[str, List[Any]]:
-
+    # Dynamically constructs WHERE clause based on user filters from sidebar
     clauses = []
     params: List[Any] = []
 
@@ -159,7 +159,7 @@ def sql_quantiles_track_popularity(
     where_sql: str,
     params: Sequence[Any],
 ) -> List[Dict[str, Any]]:
-
+    # Calculates percentiles for track popularity distribution
     quantiles = [0.10, 0.25, 0.50, 0.75, 0.90]
     results = []
 
@@ -278,6 +278,7 @@ def sql_popularity_over_time(conn, where_sql, params):
     return fetch_all(conn, query, params)
 
 def sql_median_track_popularity(conn, where_sql: str, params):
+    # Computes median using manual offset calculation (SQLite lacks MEDIAN function)
     count_row = fetch_one(
         conn,
         f"""
@@ -321,6 +322,7 @@ def fetch_dashboard_data(
     explicit_choice,
     exclude_unknown_genre,
 ):
+    # Master aggregation function: compiles all queries for dashboard display
     where_sql, params = build_where_clause(
         selected_genres,
         selected_album_types,
@@ -370,6 +372,7 @@ def fetch_dashboard_data(
     }
 
 def sql_popularity_buckets(conn, where_sql, params):
+    # Categorizes tracks by popularity levels: Low ≤30, Medium ≤60, High >60
     query = f"""
     SELECT
         CASE
@@ -387,6 +390,7 @@ def sql_popularity_buckets(conn, where_sql, params):
     return fetch_all(conn, query, params)
 
 def sql_rule_based_hit_evaluation(conn, where_sql, params):
+    # Retrieves data for hit prediction: tracks with artist followers and popularity
     """
     Returns raw data needed for rule-based hit evaluation.
     Percentile cutoff is computed in Python (not SQL).
