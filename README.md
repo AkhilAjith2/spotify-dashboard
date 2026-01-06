@@ -27,7 +27,7 @@ The results are presented through an interactive Streamlit dashboard that mirror
 
 ### 1. Create a Virtual Environment
 
-First, create and activate a virtual environment to isolate your project dependencies:
+First, make sure you're in the correct directory (`spotify-dashboard-main`), then create a virtual environment:
 
 ```bash
 python -m venv venv
@@ -57,7 +57,7 @@ pip install -r requirements.txt
 
 ### 3. Run the Notebook (Data Preparation)
 
-1. Download `track_data_final.csv` from Kaggle and place it inside the `data/` folder
+1. If `track_data_final.csv` doesnt exist in the `data/` folder, download it from [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025) and save it as `track_data_final.csv` in the `data/` folder before running the notebook.
 2. Open the Jupyter notebook: `Final Project Notebook.ipynb`
 3. **Important:** Select the kernel version to match your Python installation. If you're using Python 3.13.7, select that kernel version from the notebook's kernel selector (top-right corner)
 4. Run all cells in the notebook
